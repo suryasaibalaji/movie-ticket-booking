@@ -7,6 +7,7 @@ const connectDB = require("./config/db");
 
 const movieRoutes = require("./routes/movieRoutes");
 const authRoutes = require("./routes/authRoutes");
+const theatreRoutes = require("./routes/theatreRoutes");
 
 const app = express();
 
@@ -14,7 +15,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-
+app.use("/api/theatres", theatreRoutes);
 
 // Connect Database
 connectDB();

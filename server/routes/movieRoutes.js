@@ -10,25 +10,16 @@ const {
     deleteMovie
 } = require("../controllers/movieControllers");
 
+const protect = require("../middleware/authMiddleware");
 
-// POST - Add Movie
 router.post("/", addMovie);
 
-
-// GET - All Movies
 router.get("/", getMovies);
 
+router.get("/:id", protect, getMovieById);
 
-// GET - One Movie
-router.get("/:id", getMovieById);
-
-
-// PUT - Update Movie
 router.put("/:id", updateMovie);
 
-
-// DELETE - Delete Movie
 router.delete("/:id", deleteMovie);
-
 
 module.exports = router;
