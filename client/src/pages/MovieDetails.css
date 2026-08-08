@@ -1,41 +1,100 @@
 .details-page {
-    padding: 40px 60px;
+    min-height: 100vh;
+    padding: 50px 70px;
+    background: #f5f5f5;
 }
+
+
+/* MOVIE DETAILS */
 
 .movie-details {
     display: flex;
-    gap: 40px;
-    margin-bottom: 50px;
+    gap: 50px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .movie-details img {
-    width: 280px;
-    height: 400px;
+    width: 260px;
+    height: 380px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 10px;
+    background: #ddd;
 }
 
-.movie-details h1 {
-    font-size: 40px;
+.movie-info {
+    flex: 1;
+}
+
+.movie-info h1 {
+    font-size: 42px;
+    margin-top: 0;
+}
+
+.movie-info p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* SHOWS */
+
+.shows-section {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.shows-section h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
 }
 
 .show-list {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
 }
 
 .show-card {
     background: white;
-    padding: 20px;
-    width: 250px;
+    padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.show-card button {
-    padding: 10px 15px;
+.show-card h3 {
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.show-card p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.seat-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
     border: none;
-    border-radius: 6px;
+    border-radius: 7px;
+    background: #222;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
+}
+
+.seat-button:hover {
+    opacity: 0.8;
+}
+
+.no-shows {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
 }

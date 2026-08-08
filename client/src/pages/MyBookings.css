@@ -1,22 +1,218 @@
+/* ============================= */
+/* MY BOOKINGS PAGE */
+/* ============================= */
+
 .bookings-page {
     min-height: 100vh;
-    padding: 40px 60px;
-    background: #f5f5f5;
+    padding: 55px 70px;
+    background: #f6f6f6;
 }
+
+
+/* PAGE TITLE */
+
+.bookings-page h1 {
+    max-width: 1100px;
+    margin: 0 auto 35px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #171717;
+}
+
+
+/* BOOKING LIST */
 
 .booking-list {
+    max-width: 1100px;
+    margin: 0 auto;
+
     display: grid;
-    gap: 20px;
-    max-width: 700px;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(320px, 1fr)
+    );
+
+    gap: 25px;
 }
+
+
+/* BOOKING CARD */
 
 .booking-card {
-    padding: 25px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    background: #ffffff;
+
+    padding: 28px;
+
+    border-radius: 16px;
+
+    border: 1px solid #e7e7e7;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
+
+/* CARD HOVER */
+
+.booking-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.1);
+}
+
+
+/* MOVIE TITLE */
+
 .booking-card h2 {
-    margin-top: 0;
+    margin: 0 0 22px;
+
+    font-size: 24px;
+
+    color: #151515;
+}
+
+
+/* BOOKING DETAILS */
+
+.booking-card p {
+    margin: 12px 0;
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* SEATS */
+
+.booking-card p:nth-of-type(3) {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    padding: 7px 12px;
+
+    background: #f1f1f1;
+
+    border-radius: 7px;
+
+    color: #222;
+
+    font-weight: 600;
+}
+
+
+/* TOTAL */
+
+.booking-card p:last-of-type {
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eeeeee;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #171717;
+}
+
+
+/* CANCEL BUTTON */
+
+.cancel-button {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 12px 18px;
+
+    border: 1px solid #d7d7d7;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #333;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border 0.2s ease;
+}
+
+
+/* CANCEL HOVER */
+
+.cancel-button:hover {
+    background: #222;
+
+    color: white;
+
+    border-color: #222;
+}
+
+
+/* EMPTY STATE */
+
+.no-bookings {
+    max-width: 1100px;
+
+    margin: 80px auto;
+
+    padding: 60px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 16px;
+
+    border: 1px solid #e8e8e8;
+}
+
+.no-bookings p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 17px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .bookings-page {
+        padding: 35px 20px;
+    }
+
+    .bookings-page h1 {
+        font-size: 28px;
+    }
+
+    .booking-list {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card {
+        padding: 23px;
+    }
 }
