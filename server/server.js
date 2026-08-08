@@ -26,7 +26,6 @@ connectDB();
 // Routes
 app.use("/api/movies", movieRoutes);
 app.use("/api/auth", authRoutes);
-
 app.use("/api/bookings", bookingRoutes);
 const PORT = process.env.PORT || 5000;
 

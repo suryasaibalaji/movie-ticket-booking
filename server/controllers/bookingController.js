@@ -63,6 +63,40 @@ const createBooking = async (req, res) => {
     }
 };
 
+
+const getMyBookings = async (req, res) => {
+    try {
+        const bookings = await Booking.find({
+            user: req.user.id,
+        })
+            .populate({
+                path: "show",
+                populate: [
+                    {
+                        path: "movie",
+                    },
+                    {
+                        path: "theatre",
+                    },
+                ],
+            })
+            .sort({ createdAt: -1 });
+
+        res.status(200).json({
+            success: true,
+            bookings,
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
+
+
 module.exports = {
     createBooking,
+    getMyBookings,
 };
