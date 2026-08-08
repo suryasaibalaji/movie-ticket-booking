@@ -6,7 +6,7 @@ import MovieDetails from "./pages/MovieDetails";
 import SeatSelection from "./pages/SeatSelection";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-
+import MyBookings from "./pages/MyBookings";
 function App() {
     return (
         <BrowserRouter>
@@ -35,6 +35,10 @@ function App() {
                     path="/register"
                     element={<Register />}
                 />
+                <Route
+    path="/my-bookings"
+    element={<MyBookings />}
+/>
 
             </Routes>
         </BrowserRouter>

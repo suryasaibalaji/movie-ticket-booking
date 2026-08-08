@@ -1,0 +1,22 @@
+.bookings-page {
+    min-height: 100vh;
+    padding: 40px 60px;
+    background: #f5f5f5;
+}
+
+.booking-list {
+    display: grid;
+    gap: 20px;
+    max-width: 700px;
+}
+
+.booking-card {
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.booking-card h2 {
+    margin-top: 0;
+}
