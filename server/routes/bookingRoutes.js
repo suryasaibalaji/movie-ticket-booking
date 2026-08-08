@@ -5,6 +5,7 @@ const router = express.Router();
 const {
     createBooking,
     getMyBookings,
+    cancelBooking,
 } = require("../controllers/bookingController");
 
 const protect = require("../middleware/authMiddleware");
@@ -12,11 +13,16 @@ const protect = require("../middleware/authMiddleware");
 
 router.post("/", protect, createBooking);
 
-
 router.get(
     "/my-bookings",
     protect,
     getMyBookings
+);
+
+router.delete(
+    "/:id",
+    protect,
+    cancelBooking
 );
 
 

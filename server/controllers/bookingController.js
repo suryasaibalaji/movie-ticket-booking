@@ -95,8 +95,54 @@ const getMyBookings = async (req, res) => {
     }
 };
 
+const cancelBooking = async (req, res) => {
+    try {
+        const booking = await Booking.findOne({
+            _id: req.params.id,
+            user: req.user.id,
+        });
+
+        if (!booking) {
+            return res.status(404).json({
+                success: false,
+                message: "Booking not found",
+            });
+        }
+
+        const show = await Show.findById(booking.show);
+
+        if (show) {
+            show.bookedSeats = show.bookedSeats.filter(
+                (seat) => !booking.seats.includes(seat)
+            );
+
+            show.availableSeats.push(...booking.seats);
+
+            show.availableSeats = [
+                ...new Set(show.availableSeats),
+            ];
+
+            await show.save();
+        }
+
+        await Booking.findByIdAndDelete(booking._id);
+
+        res.status(200).json({
+            success: true,
+            message: "Booking cancelled successfully",
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
+
 
 module.exports = {
     createBooking,
     getMyBookings,
+    cancelBooking,
 };
