@@ -1,0 +1,77 @@
+.seat-page {
+    min-height: 100vh;
+    padding: 40px;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+.seat-page h1 {
+    margin-bottom: 10px;
+}
+
+.screen {
+    width: 500px;
+    max-width: 90%;
+    margin: 35px auto;
+    padding: 15px;
+    background: #ddd;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.seats {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.seat {
+    padding: 15px 5px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.seat:hover {
+    transform: translateY(-2px);
+}
+
+.seat.selected {
+    background: green;
+    color: white;
+}
+
+.seat.booked {
+    background: #999;
+    color: white;
+    cursor: not-allowed;
+}
+
+.booking-summary {
+    width: 400px;
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.book-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #111;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.book-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}

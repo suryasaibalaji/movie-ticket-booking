@@ -1,0 +1,41 @@
+.details-page {
+    padding: 40px 60px;
+}
+
+.movie-details {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.movie-details img {
+    width: 280px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.movie-details h1 {
+    font-size: 40px;
+}
+
+.show-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.show-card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.show-card button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

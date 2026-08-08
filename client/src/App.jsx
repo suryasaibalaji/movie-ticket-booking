@@ -1,7 +1,44 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
+import Movies from "./pages/Movies";
+import MovieDetails from "./pages/MovieDetails";
+import SeatSelection from "./pages/SeatSelection";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
-  return <Home />;
+    return (
+        <BrowserRouter>
+            <Routes>
+
+                <Route path="/" element={<Home />} />
+
+                <Route path="/movies" element={<Movies />} />
+
+                <Route
+                    path="/movies/:id"
+                    element={<MovieDetails />}
+                />
+
+                <Route
+                    path="/shows/:showId/seats"
+                    element={<SeatSelection />}
+                />
+
+                <Route
+                    path="/login"
+                    element={<Login />}
+                />
+
+                <Route
+                    path="/register"
+                    element={<Register />}
+                />
+
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
