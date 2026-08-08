@@ -8,6 +8,7 @@ const showRoutes = require("./routes/showRoutes");
 const movieRoutes = require("./routes/movieRoutes");
 const authRoutes = require("./routes/authRoutes");
 const theatreRoutes = require("./routes/theatreRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 
 const app = express();
 
@@ -26,7 +27,7 @@ connectDB();
 app.use("/api/movies", movieRoutes);
 app.use("/api/auth", authRoutes);
 
-
+app.use("/api/bookings", bookingRoutes);
 const PORT = process.env.PORT || 5000;
 
 
