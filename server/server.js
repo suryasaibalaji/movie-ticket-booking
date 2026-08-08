@@ -4,7 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const connectDB = require("./config/db");
-
+const showRoutes = require("./routes/showRoutes");
 const movieRoutes = require("./routes/movieRoutes");
 const authRoutes = require("./routes/authRoutes");
 const theatreRoutes = require("./routes/theatreRoutes");
@@ -16,6 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/api/theatres", theatreRoutes);
+app.use("/api/shows", showRoutes);
 
 // Connect Database
 connectDB();
