@@ -7,14 +7,26 @@ import SeatSelection from "./pages/SeatSelection";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MyBookings from "./pages/MyBookings";
+
+import Navbar from "./components/Navbar";
+
 function App() {
     return (
         <BrowserRouter>
+
+            <Navbar />
+
             <Routes>
 
-                <Route path="/" element={<Home />} />
+                <Route
+                    path="/"
+                    element={<Home />}
+                />
 
-                <Route path="/movies" element={<Movies />} />
+                <Route
+                    path="/movies"
+                    element={<Movies />}
+                />
 
                 <Route
                     path="/movies/:id"
@@ -35,12 +47,14 @@ function App() {
                     path="/register"
                     element={<Register />}
                 />
+
                 <Route
-    path="/my-bookings"
-    element={<MyBookings />}
-/>
+                    path="/my-bookings"
+                    element={<MyBookings />}
+                />
 
             </Routes>
+
         </BrowserRouter>
     );
 }
